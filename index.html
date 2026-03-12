@@ -701,6 +701,128 @@
     flex-shrink: 0;
   }
 
+  /* Three-pillar moat */
+  .moat-section {
+    margin-top: 80px;
+    padding: 80px 0 0;
+    border-top: 1px solid var(--border);
+  }
+  .moat-header {
+    text-align: center;
+    margin-bottom: 56px;
+  }
+  .moat-pillars {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+  .moat-pillar {
+    background: var(--white);
+    border: 1px solid var(--gray-200);
+    border-radius: 20px;
+    padding: 40px 36px 44px;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  .moat-pillar:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 20px 60px rgba(73,53,186,0.08);
+  }
+  .moat-pillar::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--purple), var(--purple-lt));
+    border-radius: 20px 20px 0 0;
+  }
+  .moat-pillar-icon {
+    width: 56px;
+    height: 56px;
+    border-radius: 14px;
+    background: var(--purple-wash);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 24px;
+  }
+  .moat-pillar-icon svg {
+    width: 28px;
+    height: 28px;
+    color: var(--purple);
+  }
+  .moat-pillar-number {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--purple);
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+  .moat-pillar h4 {
+    font-size: 22px;
+    font-weight: 700;
+    line-height: 1.3;
+    color: var(--text);
+    margin-bottom: 16px;
+  }
+  .moat-pillar p {
+    font-size: 15px;
+    line-height: 1.7;
+    color: var(--text-2);
+    margin-bottom: 24px;
+  }
+  .moat-proof {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 16px;
+    background: rgba(73,53,186,0.04);
+    border: 1px solid rgba(73,53,186,0.08);
+    border-radius: 10px;
+  }
+  .moat-proof-value {
+    font-size: 20px;
+    font-weight: 700;
+    background: linear-gradient(135deg, var(--purple), var(--purple-lt));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .moat-proof-label {
+    font-size: 13px;
+    color: var(--text-2);
+    line-height: 1.3;
+  }
+  .moat-connector {
+    text-align: center;
+    margin-top: 40px;
+    padding: 24px;
+  }
+  .moat-connector-text {
+    font-size: 16px;
+    color: var(--text-2);
+    line-height: 1.6;
+    max-width: 640px;
+    margin: 0 auto;
+  }
+  .moat-connector-text strong {
+    color: var(--text);
+    font-weight: 600;
+  }
+  @media (max-width: 1024px) {
+    .moat-pillars {
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+    .moat-section { margin-top: 56px; padding-top: 56px; }
+  }
+  @media (max-width: 768px) {
+    .moat-pillar { padding: 32px 24px 36px; }
+    .moat-pillar h4 { font-size: 20px; }
+  }
+
   /* Gradient art panels */
   .gradient-art {
     border-radius: 20px;
@@ -1481,7 +1603,7 @@
         The Cash Generation <em>Platform</em>
       </h1>
       <p class="hero-desc reveal reveal-delay-2">
-        Your AR team deserves reliable cash flow — not more complexity. Billtrust connects intelligent software, $1T+ in proprietary B2B payment data, and the world's largest payments network so you can close the books with confidence, every time.
+        Billtrust fuses autonomous AI, $1T+ in proprietary B2B payment data, and the world's largest payments network into one platform — so your AR team collects cash faster, closes the books with confidence, and never chases a payment again.
       </p>
       <div class="hero-actions reveal reveal-delay-3">
         <button class="btn-primary">See It In Action <span>→</span></button>
@@ -1638,13 +1760,13 @@
         </div>
       </div>
       <div class="platform-text">
-        <div class="eyebrow">Invoicing & Payments</div>
-        <h3>Deliver invoices where buyers <em>actually&nbsp;pay</em></h3>
-        <p>Stop chasing down the right portal. Billtrust routes every invoice through the channel each buyer prefers — AP portal, email, EDI, or the Billtrust Network — so nothing falls through the cracks. Fewer disputes, faster payments, less manual work for your team.</p>
+        <div class="eyebrow">Autonomous Delivery Engine</div>
+        <h3>AI that routes every invoice to the <em>fastest&nbsp;path&nbsp;to&nbsp;cash</em></h3>
+        <p>Billtrust's autonomous delivery engine analyzes each buyer's payment behavior — preferred channel, historical speed-to-pay, dispute patterns — then routes invoices through the optimal path: AP portal, email, EDI, or the Billtrust Network. No rules to configure. No manual guesswork. The system learns and adapts with every transaction.</p>
         <div class="platform-features">
-          <div class="platform-feature"><div class="check">✓</div> Automatic channel routing — no manual guesswork</div>
-          <div class="platform-feature"><div class="check">✓</div> 99.7% delivery rate across all channels</div>
-          <div class="platform-feature"><div class="check">✓</div> Fewer disputes, faster time-to-pay</div>
+          <div class="platform-feature"><div class="check">✓</div> Autonomous channel selection trained on $1T+ in payment data</div>
+          <div class="platform-feature"><div class="check">✓</div> 99.7% delivery rate — verified across every rail</div>
+          <div class="platform-feature"><div class="check">✓</div> Continuous optimization: fewer disputes, faster time-to-pay</div>
         </div>
       </div>
     </div>
@@ -1683,13 +1805,13 @@
         </div>
       </div>
       <div class="platform-text">
-        <div class="eyebrow">Cash Application</div>
-        <h3>Close the books with <em>confidence</em></h3>
-        <p>Checks, ACH, wire, lockbox — Billtrust matches every payment format to open invoices at 97% accuracy without your team lifting a finger. Your close cycle gets shorter, your AR aging report stays clean, and your auditors stay happy.</p>
+        <div class="eyebrow">Autonomous Cash Matching</div>
+        <h3>AI-powered matching that <em>closes&nbsp;your&nbsp;books</em></h3>
+        <p>Billtrust's autonomous matching engine ingests every payment format — checks, ACH, wire, lockbox, virtual cards — and resolves them against open invoices in under a second. Trained on billions of historical transactions, the model handles remittance variations, partial payments, and multi-invoice remits that break rules-based systems. Exceptions drop to an assisted workflow where your team resolves only what the AI can't.</p>
         <div class="platform-features">
-          <div class="platform-feature"><div class="check">✓</div> 97% auto-match rate — fewer exceptions to chase</div>
-          <div class="platform-feature"><div class="check">✓</div> Same-day cash posting, every day</div>
-          <div class="platform-feature"><div class="check">✓</div> Clean AR aging that's always audit-ready</div>
+          <div class="platform-feature"><div class="check">✓</div> 97% straight-through processing — autonomous, not rules-based</div>
+          <div class="platform-feature"><div class="check">✓</div> Assisted exception handling for edge cases your team controls</div>
+          <div class="platform-feature"><div class="check">✓</div> Same-day posting, audit-ready AR aging</div>
         </div>
       </div>
     </div>
@@ -1726,40 +1848,69 @@
         </div>
       </div>
       <div class="platform-text">
-        <div class="eyebrow">Smart Collections</div>
-        <h3>Collect what you're owed — <em>on&nbsp;time</em></h3>
-        <p>Your team shouldn't spend their day making follow-up calls on a spreadsheet. Billtrust prioritizes your highest-impact accounts, automates routine outreach, and surfaces the ones that need a human touch — so cash comes in on schedule and nothing gets forgotten.</p>
+        <div class="eyebrow">Predictive Collections Intelligence</div>
+        <h3>Machine learning that knows who'll pay — and <em>when</em></h3>
+        <p>Billtrust's predictive models score every receivable by likelihood and timing of payment, trained on cross-network behavioral data no single company could build alone. The system autonomously triggers dunning sequences for routine accounts while surfacing high-risk receivables to an assisted worklist — so your collectors focus only where human judgment moves the needle.</p>
         <div class="platform-features">
-          <div class="platform-feature"><div class="check">✓</div> Prioritized worklists — focus on what matters most</div>
-          <div class="platform-feature"><div class="check">✓</div> Automated dunning that runs while your team sleeps</div>
-          <div class="platform-feature"><div class="check">✓</div> Predictable cash flow your CFO can count on</div>
+          <div class="platform-feature"><div class="check">✓</div> Predictive scoring powered by cross-network payment signals</div>
+          <div class="platform-feature"><div class="check">✓</div> Autonomous dunning for routine collections</div>
+          <div class="platform-feature"><div class="check">✓</div> Assisted worklists that surface what needs human attention</div>
         </div>
       </div>
     </div>
 
-    <!-- 4. AI -->
-    <div class="platform-row reverse reveal">
-      <div class="ai-visual" style="aspect-ratio:4/3;">
-        <div class="ai-ring ai-ring-1"></div>
-        <div class="ai-ring ai-ring-2"></div>
-        <div class="ai-ring ai-ring-3"></div>
-        <div class="ai-core">
-          <div class="ai-core-text">AI</div>
-        </div>
-        <div class="ai-orbit-dot"></div>
-        <div class="ai-orbit-dot"></div>
-        <div class="ai-orbit-dot"></div>
+    <!-- Why Billtrust — Three-Pillar Moat -->
+    <div class="moat-section reveal">
+      <div class="moat-header">
+        <div class="section-eyebrow">Why Billtrust</div>
+        <h2 class="section-title">A technical moat no competitor <em>can&nbsp;replicate</em></h2>
       </div>
-      <div class="platform-text">
-        <div class="eyebrow">Why Billtrust</div>
-        <h3>Dependable, not <em>disruptive</em></h3>
-        <p>You don't need another "transformational" platform. You need one that works — reliably, every day, at scale. Billtrust combines proven software with $1T+ in proprietary B2B payment data and the world's largest payments network. The result: fewer surprises, faster cash, and a finance operation your leadership can depend on.</p>
-        <div class="platform-features">
-          <div class="platform-feature"><div class="check">✓</div> Proven at 2,400+ enterprises — not an experiment</div>
-          <div class="platform-feature"><div class="check">✓</div> Works alongside your team, not instead of it</div>
-          <div class="platform-feature"><div class="check">✓</div> $1T+ in proprietary data — accuracy that compounds over time</div>
-          <div class="platform-feature"><div class="check">✓</div> 99.9% uptime — the reliability your CFO expects</div>
+      <div class="moat-pillars">
+        <!-- Pillar 1: Deterministic Software + AI -->
+        <div class="moat-pillar reveal reveal-delay-1">
+          <div class="moat-pillar-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904 9 18.75l-.813-2.846a4.5 4.5 0 0 0-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 0 0 3.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 0 0 3.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 0 0-3.09 3.09ZM18.259 8.715 18 9.75l-.259-1.035a3.375 3.375 0 0 0-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 0 0 2.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 0 0 2.455 2.456L21.75 6l-1.036.259a3.375 3.375 0 0 0-2.455 2.456Z" /></svg>
+          </div>
+          <div class="moat-pillar-number">Pillar One</div>
+          <h4>Deterministic Software + Autonomous AI</h4>
+          <p>A hardened, rules-based platform handles the deterministic work — invoice delivery, payment processing, compliance checks — while autonomous AI workflows handle the judgment calls: matching, routing, scoring, and prioritization. Where confidence is lower, assisted workflows keep your team in control.</p>
+          <div class="moat-proof">
+            <div class="moat-proof-value">97%</div>
+            <div class="moat-proof-label">Straight-through processing<br>without human intervention</div>
+          </div>
         </div>
+
+        <!-- Pillar 2: Proprietary Dataset -->
+        <div class="moat-pillar reveal reveal-delay-2">
+          <div class="moat-pillar-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M20.25 6.375c0 2.278-3.694 4.125-8.25 4.125S3.75 8.653 3.75 6.375m16.5 0c0-2.278-3.694-4.125-8.25-4.125S3.75 4.097 3.75 6.375m16.5 0v11.25c0 2.278-3.694 4.125-8.25 4.125s-8.25-1.847-8.25-4.125V6.375m16.5 0v3.75m-16.5-3.75v3.75m16.5 0v3.75C20.25 16.153 16.556 18 12 18s-8.25-1.847-8.25-4.125v-3.75m16.5 0c0 2.278-3.694 4.125-8.25 4.125s-8.25-1.847-8.25-4.125" /></svg>
+          </div>
+          <div class="moat-pillar-number">Pillar Two</div>
+          <h4>The Largest Proprietary B2B Payment Dataset</h4>
+          <p>Every transaction across our network feeds a proprietary dataset no competitor can license or replicate. This data trains every model — from invoice routing to payment prediction to collections scoring — and its accuracy compounds with every dollar processed.</p>
+          <div class="moat-proof">
+            <div class="moat-proof-value">$1T+</div>
+            <div class="moat-proof-label">In B2B payment data<br>training our AI models</div>
+          </div>
+        </div>
+
+        <!-- Pillar 3: Payments Network -->
+        <div class="moat-pillar reveal reveal-delay-3">
+          <div class="moat-pillar-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12.75 3.03v.568c0 .334.148.65.405.864l1.068.89c.442.369.535 1.01.216 1.49l-.51.766a2.25 2.25 0 0 1-1.161.886l-.143.048a1.107 1.107 0 0 0-.57 1.664c.369.555.169 1.307-.427 1.605L9 13.125l.423 1.059a.956.956 0 0 1-1.652.928l-.679-.906a1.125 1.125 0 0 0-1.906.172L4.5 15.75l-.612.153M12.75 3.031a9 9 0 0 1 6.69 14.036m0 0-.177-.529A2.25 2.25 0 0 0 17.128 15H16.5l-.324-.324a1.453 1.453 0 0 0-2.328.377l-.036.073a1.586 1.586 0 0 1-.982.816l-.99.282c-.55.157-.894.702-.8 1.267l.073.438c.08.474.49.821.97.821.846 0 1.598.542 1.865 1.345l.215.643m5.276-3.67a9.012 9.012 0 0 1-5.276 3.67m0 0a9 9 0 0 1-10.275-4.835M15.75 9c0 .896-.393 1.7-1.016 2.25" /></svg>
+          </div>
+          <div class="moat-pillar-number">Pillar Three</div>
+          <h4>The World's Most Connected B2B Payments Engine</h4>
+          <p>Billtrust connects 2,400+ suppliers to 100M+ buyers across every AP portal, payment rail, and procurement network. This isn't just reach — it's a network effect: every new connection makes the entire platform smarter, faster, and harder to compete with.</p>
+          <div class="moat-proof">
+            <div class="moat-proof-value">100M+</div>
+            <div class="moat-proof-label">Buyer connections across<br>every major payment rail</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="moat-connector">
+        <p class="moat-connector-text"><strong>Together, these three layers create a compounding advantage.</strong> The more data flows through the network, the smarter the AI becomes. The smarter the AI, the more customers join. And the more customers join, the more valuable the network — for everyone on it.</p>
       </div>
     </div>
   </div>
