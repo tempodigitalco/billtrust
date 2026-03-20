@@ -1,0 +1,422 @@
+{
+  "categoryPosition": {
+    "categoryName": "Invoice-to-Cash",
+    "identityStatement": "AI Fintech, not a software company",
+    "identityExplanation": "Billtrust is not a software company that added AI. It is an AI Fintech that built software as the infrastructure layer.",
+    "primaryAudience": {
+      "role": "Controller",
+      "psychProfile": "Calm, methodical, family-oriented. Values stability and proven results. Adopts AI through outcomes, not promises.",
+      "whatTheyWant": "Certainty — fewer exceptions, faster cash, go home on time."
+    },
+    "secondaryAudience": {
+      "role": "Investor / Analyst",
+      "psychProfile": "Forward-looking, interested in moat and compounding value.",
+      "whatTheyWant": "A data moat and network effect story that justifies premium valuation."
+    },
+    "oneLinePosition": "The AI-powered cash generation platform. Certainty, delivered.",
+    "competitiveFrame": {
+      "category": "Invoice-to-Cash / Order-to-Cash",
+      "playingField": [
+        "HighRadius",
+        "Esker",
+        "Versapay"
+      ],
+      "differentiator": "Only platform combining deterministic software + autonomous AI + proprietary data + connected payments network"
+    },
+    "moat": {
+      "a": {
+        "label": "Deterministic Software + Autonomous AI",
+        "forController": "Power + control + autonomous action. Rules-based execution for the predictable; AI for the judgment calls.",
+        "forInvestor": "Hybrid architecture that competitors can't replicate — deterministic precision with AI intelligence."
+      },
+      "b": {
+        "label": "Proprietary Dataset",
+        "forController": "Continuously optimizes speed and cost of cash generation like no other provider.",
+        "forInvestor": "$1T+ in processed invoices — a compounding data asset that improves with every transaction."
+      },
+      "c": {
+        "label": "Connected Payments Engine",
+        "forController": "One integration, every rail, every buyer. It just works.",
+        "forInvestor": "World's most connected B2B payments engine — network effects that deepen with scale."
+      }
+    }
+  },
+  "positioningStatements": {
+    "long": {
+      "text": "Billtrust is the AI-powered cash generation platform that combines a battle-tested software foundation, the richest proprietary dataset in B2B payments, and the world's most connected payment network to deliver certainty — every invoice delivered, every payment matched, every dollar accounted for.",
+      "usage": "Website hero, pitch decks, press releases, investor materials",
+      "audience": "All audiences",
+      "maxLength": 500,
+      "locked": false
+    },
+    "medium": {
+      "text": "Billtrust's AI-powered platform automates cash generation from invoice to payment. Battle-tested software, proprietary data intelligence, and the most connected B2B payments network — delivering certainty at every step.",
+      "usage": "Sales collateral, email signatures, trade show materials, LinkedIn bios",
+      "audience": "All audiences",
+      "maxLength": 280,
+      "locked": false
+    },
+    "short": {
+      "text": "The AI-powered cash generation platform. Certainty, delivered.",
+      "usage": "Social media bios, ad copy, event signage, swag",
+      "audience": "All audiences",
+      "maxLength": 100,
+      "locked": false
+    },
+    "controllerVersion": {
+      "text": "It just works. Fewer exceptions, faster cash, and you go home on time.",
+      "usage": "Product marketing, sales conversations, customer-facing collateral",
+      "audience": "Controllers",
+      "maxLength": 150,
+      "locked": false
+    },
+    "investorVersion": {
+      "text": "A compounding data moat and network effect that no competitor can replicate, delivering increasing returns on every transaction.",
+      "usage": "Investor decks, analyst briefings, board materials",
+      "audience": "Investors & Analysts",
+      "maxLength": 200,
+      "locked": false
+    }
+  },
+  "websiteCopy": {
+    "hero": {
+      "h1": "Your Cash. Unlocked.",
+      "h2": "Billtrust's AI-powered platform automates invoicing, accelerates payments, and eliminates the guesswork from cash flow — so your team can focus on what matters.",
+      "cta": "See the Platform",
+      "ctaSecondary": "Watch Demo"
+    },
+    "stats": [
+      {
+        "value": "$1T+",
+        "label": "Invoices Processed"
+      },
+      {
+        "value": "99.8%",
+        "label": "Cash Application Accuracy"
+      },
+      {
+        "value": "37%",
+        "label": "Faster Collections"
+      },
+      {
+        "value": "2,400+",
+        "label": "Enterprise Customers"
+      }
+    ],
+    "platformSection": {
+      "headline": "One Platform. Total Certainty.",
+      "subheadline": "From invoice creation to cash in the bank — autonomous AI handles the complexity, deterministic software guarantees the precision."
+    },
+    "cashEngine": {
+      "productName": "Cash Engine",
+      "tagline": "Invoicing & Payments",
+      "headline": "Get paid faster. Every invoice, every channel, every time.",
+      "description": "AI-powered invoice delivery and payment acceptance across every channel your buyers prefer — ACH, virtual card, wire, check. One integration, zero friction."
+    },
+    "cashAccelerator": {
+      "productName": "Cash Accelerator",
+      "tagline": "Cash Application & Collections",
+      "headline": "Match every payment. Chase every dollar. Automatically.",
+      "description": "Autonomous cash application matches payments to invoices with 99.8% accuracy. AI-prioritized collections ensure no revenue slips through the cracks."
+    },
+    "moatSection": {
+      "headline": "Why Billtrust Wins",
+      "description": "Three layers of compounding advantage that no competitor can replicate."
+    },
+    "networkSection": {
+      "headline": "The Network Effect",
+      "description": "Every new connection makes every existing connection smarter. Billtrust's payment network is the largest in B2B — and it's accelerating."
+    },
+    "testimonials": [
+      {
+        "quote": "Our DSO dropped 12 days in the first quarter — and it stayed down.",
+        "author": "Sarah Johnson",
+        "title": "VP of Finance",
+        "company": "Enterprise Manufacturing"
+      }
+    ],
+    "finalCta": {
+      "headline": "Ready to unlock your cash?",
+      "subheadline": "See how Billtrust turns receivables into certainty.",
+      "ctaText": "Request a Demo"
+    }
+  },
+  "voiceAndTone": {
+    "brandPersonality": {
+      "primary": "Quietly Confident",
+      "secondary": "Technically Deep",
+      "tertiary": "Outcome-Obsessed",
+      "description": "We sound like the smartest person in the room who doesn't need to prove it. Our confidence comes from results, not claims. We let the numbers speak."
+    },
+    "toneSpectrum": [
+      {
+        "dimension": "Formal — Casual",
+        "position": 65,
+        "note": "Professional but not stiff. We use contractions. We don't use jargon for its own sake."
+      },
+      {
+        "dimension": "Authoritative — Approachable",
+        "position": 70,
+        "note": "We speak with authority on AR/AP but never talk down. Controllers are experts in their domain."
+      },
+      {
+        "dimension": "Bold — Measured",
+        "position": 55,
+        "note": "We make strong claims but always back them with specifics."
+      },
+      {
+        "dimension": "Innovative — Reliable",
+        "position": 40,
+        "note": "For Controllers: lean reliable. For investors: lean innovative. Default to reliable."
+      },
+      {
+        "dimension": "Urgent — Patient",
+        "position": 35,
+        "note": "We're never pushy. Controllers hate pressure. We present the value and let them decide."
+      }
+    ],
+    "audienceRegisters": {
+      "controller": {
+        "tone": "Calm, reassuring, outcome-focused",
+        "openWith": "Results and reliability",
+        "avoid": "Hype, buzzwords, pressure tactics",
+        "example": "Billtrust matches 99.8% of payments automatically. Your team handles the exceptions — we handle everything else."
+      },
+      "investor": {
+        "tone": "Confident, data-driven, forward-looking",
+        "openWith": "Moat, data assets, network effects",
+        "avoid": "Generic SaaS language, feature lists",
+        "example": "Every invoice processed deepens our data moat. Every new network connection creates compounding value. This is how you build an AI Fintech."
+      },
+      "analyst": {
+        "tone": "Precise, technically credible, strategic",
+        "openWith": "Architecture and differentiation",
+        "avoid": "Marketing fluff, unsubstantiated claims",
+        "example": "Our hybrid architecture — deterministic rules for precision, autonomous AI for judgment — delivers measurably better outcomes than pure-AI or pure-rules approaches."
+      }
+    },
+    "writingPrinciples": [
+      {
+        "principle": "Show, don't tell",
+        "explanation": "Never say 'industry-leading' — show the $1T+ in processed invoices. Never say 'cutting-edge' — describe the hybrid AI architecture.",
+        "good": "99.8% cash application accuracy across 2,400+ enterprise customers",
+        "bad": "Our industry-leading solution delivers best-in-class results"
+      },
+      {
+        "principle": "Specificity over superlatives",
+        "explanation": "Replace every adjective with a number or concrete detail.",
+        "good": "Process invoices across 40+ payment channels",
+        "bad": "Process invoices across multiple payment channels"
+      },
+      {
+        "principle": "Mirror the Controller",
+        "explanation": "Write like a trusted colleague, not a salesperson. Controllers are the calm, steady presence — our copy should be too.",
+        "good": "You'll spend less time chasing payments and more time on strategic work.",
+        "bad": "TRANSFORM your accounts receivable with REVOLUTIONARY AI!!!"
+      },
+      {
+        "principle": "Certainty is the promise",
+        "explanation": "'Certainty' is our brand word. It anchors everything. Use it deliberately and sparingly.",
+        "good": "Every invoice delivered, every payment matched, every dollar accounted for. Certainty, delivered.",
+        "bad": "We provide certainty in everything we do with our certain platform."
+      }
+    ]
+  },
+  "dosAndDonts": {
+    "terminology": [
+      {
+        "use": "Autonomous",
+        "avoid": "Agentic",
+        "reason": "Agentic is VC/tech jargon that means nothing to Controllers. Autonomous conveys the same capability with clarity.",
+        "severity": "critical"
+      },
+      {
+        "use": "Assisted",
+        "avoid": "Copilot",
+        "reason": "Copilot is Microsoft's brand. Assisted is clearer and avoids trademark issues.",
+        "severity": "critical"
+      },
+      {
+        "use": "AI Fintech",
+        "avoid": "Software company",
+        "reason": "Core identity positioning. We are an AI Fintech that built software, not a software company that added AI.",
+        "severity": "critical"
+      },
+      {
+        "use": "Cash generation platform",
+        "avoid": "AR automation tool",
+        "reason": "Platform > tool. Cash generation > AR automation. Elevates the category.",
+        "severity": "high"
+      },
+      {
+        "use": "Certainty",
+        "avoid": "Peace of mind / confidence / trust",
+        "reason": "Certainty is our brand word. It's more specific and measurable than generic alternatives.",
+        "severity": "medium"
+      },
+      {
+        "use": "Cash Engine / Cash Accelerator",
+        "avoid": "Invoicing module / Collections module",
+        "reason": "Official product names. 'Module' sounds like legacy ERP.",
+        "severity": "high"
+      },
+      {
+        "use": "Battle-tested",
+        "avoid": "Proven / established / legacy",
+        "reason": "Battle-tested conveys reliability + strength. Proven is generic. Legacy sounds old.",
+        "severity": "low"
+      }
+    ],
+    "phrasesToAvoid": [
+      {
+        "phrase": "Best-in-class",
+        "reason": "Empty superlative. Replace with a specific metric.",
+        "alternative": "Cite the actual metric: 99.8% accuracy, $1T+ processed, etc."
+      },
+      {
+        "phrase": "Digital transformation",
+        "reason": "Overused buzzword that Controllers actively distrust.",
+        "alternative": "Describe the specific operational improvement."
+      },
+      {
+        "phrase": "Seamless integration",
+        "reason": "Every company says this. It means nothing.",
+        "alternative": "One integration, every rail — or cite specific ERP integrations."
+      },
+      {
+        "phrase": "End-to-end",
+        "reason": "Vague. What does end-to-end actually mean?",
+        "alternative": "From invoice creation to cash in the bank."
+      },
+      {
+        "phrase": "Leverage / utilize",
+        "reason": "Corporate speak. Just say 'use.'",
+        "alternative": "Use, apply, deploy"
+      },
+      {
+        "phrase": "Disruptive / disruption",
+        "reason": "Controllers don't want disruption. They want reliability.",
+        "alternative": "Describe the specific improvement without the chaos framing."
+      }
+    ],
+    "competitorLanguageTraps": [
+      {
+        "competitor": "HighRadius",
+        "theirLanguage": "Autonomous finance, AI-native",
+        "ourResponse": "We don't chase their terminology. We own 'Certainty' and 'Cash generation.' Let them have 'autonomous finance' — it's vague.",
+        "neverSay": "Never position against HighRadius by name in public materials."
+      },
+      {
+        "competitor": "Esker",
+        "theirLanguage": "Positive-sum, source-to-pay",
+        "ourResponse": "Esker talks about the process. We talk about the outcome. Don't compete on process terminology — compete on results.",
+        "neverSay": "Never use 'positive-sum' or 'source-to-pay' — those are Esker's frames."
+      },
+      {
+        "competitor": "Versapay",
+        "theirLanguage": "Collaborative AR, customer-centric",
+        "ourResponse": "Collaborative AR is a feature, not a platform. We don't need to address it — we operate at a higher level.",
+        "neverSay": "Never acknowledge 'collaborative AR' as a category — it legitimizes Versapay's frame."
+      }
+    ]
+  },
+  "competitiveLens": {
+    "positioningMap": {
+      "xAxis": "Breadth of Platform (Point Solution — Full Platform)",
+      "yAxis": "Intelligence Layer (Rules-Based — AI-Native)",
+      "players": [
+        {
+          "name": "Billtrust",
+          "x": 85,
+          "y": 80,
+          "color": "#4935BA"
+        },
+        {
+          "name": "HighRadius",
+          "x": 90,
+          "y": 85,
+          "color": "#EF4444"
+        },
+        {
+          "name": "Esker",
+          "x": 70,
+          "y": 60,
+          "color": "#F59E0B"
+        },
+        {
+          "name": "Versapay",
+          "x": 35,
+          "y": 30,
+          "color": "#6B7280"
+        }
+      ]
+    },
+    "competitors": [
+      {
+        "name": "HighRadius",
+        "theirPosition": "Autonomous finance platform — AI-native, enterprise-focused",
+        "theirStrengths": [
+          "Strong AI narrative and investor story",
+          "Deep enterprise relationships",
+          "Large R&D investment"
+        ],
+        "theirVulnerabilities": [
+          "Overpromises on AI capabilities",
+          "Complex implementation, high churn risk",
+          "Breadth without depth in any single area"
+        ],
+        "ourAttackPlay": "We deliver. They promise. Controllers don't want autonomous finance — they want cash in the bank. Ask any HighRadius customer about their actual match rates.",
+        "headToHeadMessage": "When you hear 'autonomous finance,' ask: what's the match rate? What's the implementation timeline? What's the total cost of ownership?"
+      },
+      {
+        "name": "Esker",
+        "theirPosition": "Source-to-pay and order-to-cash automation — process efficiency",
+        "theirStrengths": [
+          "Clean UX, loved by AP teams",
+          "Strong European market presence",
+          "Source-to-pay breadth"
+        ],
+        "theirVulnerabilities": [
+          "Jack of all trades, master of none",
+          "Weak payments network",
+          "AI is incremental, not foundational"
+        ],
+        "ourAttackPlay": "Esker is a process tool. Billtrust is a cash generation platform. They optimize steps; we optimize outcomes. And our payments network is 10x their connectivity.",
+        "headToHeadMessage": "Esker is great if you need source-to-pay. For invoice-to-cash? Billtrust processes more, connects more, and matches more."
+      },
+      {
+        "name": "Versapay",
+        "theirPosition": "Collaborative AR — customer-centric collections",
+        "theirStrengths": [
+          "Strong buyer portal / collaboration story",
+          "Easy to implement for mid-market",
+          "Good customer satisfaction"
+        ],
+        "theirVulnerabilities": [
+          "Limited to AR — not a platform play",
+          "No AI moat, no data asset",
+          "Can't scale to enterprise"
+        ],
+        "ourAttackPlay": "Versapay is a feature we offer, not a competitor. Collaborative AR is one capability within Cash Accelerator. They built a company around one feature of our platform.",
+        "headToHeadMessage": "If you just need a buyer portal, Versapay is fine. If you need a platform that grows with you — invoicing, payments, cash application, collections, and a connected payments network — that's Billtrust."
+      }
+    ]
+  },
+  "aiConfig": {
+    "systemPromptTemplate": "You are a brand positioning analyst for Billtrust, an AI-powered accounts receivable platform. Evaluate the positioning data for consistency, terminology compliance, audience alignment, competitive differentiation, and completeness. Be direct and specific in your feedback.",
+    "scoringWeights": {
+      "statementConsistency": 0.3,
+      "terminologyCompliance": 0.25,
+      "audienceAlignment": 0.2,
+      "competitiveDifferentiation": 0.15,
+      "completeness": 0.1
+    },
+    "enabledChecks": [
+      "terminology_scan",
+      "consistency_cross_check",
+      "specificity_score",
+      "competitive_overlap",
+      "audience_tone_match"
+    ]
+  }
+}
