@@ -1,0 +1,371 @@
+{
+  "hero": {
+    "badge": "Trusted by 2,400+ enterprise finance teams",
+    "headline": "Your Cash. Unlocked.",
+    "description": "Billtrust's AI-powered platform automates invoicing, accelerates payments, and eliminates the guesswork from cash flow — so your team can focus on what matters.",
+    "ctaPrimary": "See the Platform",
+    "ctaSecondary": "Watch Demo",
+    "dashboard": {
+      "title": "Cash Dashboard",
+      "date": "Tuesday, March 10",
+      "stats": [
+        {
+          "label": "Cash Applied Today",
+          "value": "$2.4M",
+          "change": "↑ 18% vs. last week"
+        },
+        {
+          "label": "Auto-Match Rate",
+          "value": "97.3%",
+          "change": "↑ 2.1% this month"
+        },
+        {
+          "label": "Open Invoices",
+          "value": "1,247",
+          "change": "↓ 312 from yesterday"
+        }
+      ],
+      "chartTitle": "Weekly Cash Flow",
+      "floatingCard": {
+        "label": "Just matched",
+        "value": "$48,750.00"
+      }
+    }
+  },
+  "stats": {
+    "eyebrow": "Proven at Scale",
+    "headline": "One Platform. Total Certainty.",
+    "items": [
+      {
+        "value": "$1T+",
+        "unit": "+",
+        "description": "Invoices Processed"
+      },
+      {
+        "value": "99.8%",
+        "unit": "+",
+        "description": "Cash Application Accuracy"
+      },
+      {
+        "value": "37%",
+        "unit": "+",
+        "description": "Faster Collections"
+      },
+      {
+        "value": "2,400+",
+        "unit": "day",
+        "description": "Enterprise Customers"
+      }
+    ]
+  },
+  "platform": {
+    "eyebrow": "The Platform",
+    "headline": "Reliable AR from invoice to <em>cash&nbsp;in&nbsp;hand</em>",
+    "pillars": [
+      {
+        "eyebrow": "Cash Engine",
+        "headline": "Get paid faster. Every invoice, every channel, every time.",
+        "description": "AI-powered invoice delivery and payment acceptance across every channel your buyers prefer — ACH, virtual card, wire, check. One integration, zero friction.",
+        "features": [
+          "Autonomous channel selection trained on $1T+ in payment data",
+          "99.7% delivery rate — verified across every rail",
+          "Continuous optimization: fewer disputes, faster time-to-pay"
+        ],
+        "card": {
+          "title": "Invoice Delivery",
+          "pill": "Sent",
+          "rows": [
+            {
+              "label": "Invoices this week",
+              "value": "4,218"
+            },
+            {
+              "label": "Delivery rate",
+              "value": "99.7%"
+            },
+            {
+              "label": "Digital adoption",
+              "value": "78% ↑"
+            },
+            {
+              "label": "Avg. time to pay",
+              "value": "-8 days"
+            }
+          ]
+        }
+      },
+      {
+        "eyebrow": "Cash Accelerator",
+        "headline": "Match every payment. Chase every dollar. Automatically.",
+        "description": "Autonomous cash application matches payments to invoices with 99.8% accuracy. AI-prioritized collections ensure no revenue slips through the cracks.",
+        "features": [
+          "97% straight-through processing — autonomous, not rules-based",
+          "Assisted exception handling for edge cases your team controls",
+          "Same-day posting, audit-ready AR aging"
+        ],
+        "card": {
+          "title": "Cash Application",
+          "pill": "AI Matched",
+          "rows": [
+            {
+              "label": "Payment #4817",
+              "value": "$24,500.00"
+            },
+            {
+              "label": "Invoice match",
+              "value": "INV-2847 → 97%"
+            },
+            {
+              "label": "Processing time",
+              "value": "0.3 seconds"
+            },
+            {
+              "label": "Status",
+              "value": "● Auto-applied"
+            }
+          ]
+        }
+      },
+      {
+        "eyebrow": "Predictive Collections Intelligence",
+        "headline": "Machine learning that knows who'll pay — and <em>when</em>",
+        "description": "Billtrust's predictive models score every receivable by likelihood and timing of payment, trained on cross-network behavioral data no single company could build alone. The system autonomously triggers dunning sequences for routine accounts while surfacing high-risk receivables to an assisted worklist — so your collectors focus only where human judgment moves the needle.",
+        "features": [
+          "Predictive scoring powered by cross-network payment signals",
+          "Autonomous dunning for routine collections",
+          "Assisted worklists that surface what needs human attention"
+        ],
+        "card": {
+          "title": "Collections Queue",
+          "pill": "Prioritized",
+          "rows": [
+            {
+              "label": "High priority",
+              "value": "12 accounts"
+            },
+            {
+              "label": "Total outstanding",
+              "value": "$3.2M"
+            },
+            {
+              "label": "Predicted recovery",
+              "value": "$2.8M (87%)"
+            },
+            {
+              "label": "Next action",
+              "value": "Auto-dunning in 2h"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "moat": {
+    "eyebrow": "Why Billtrust",
+    "headline": "Why Billtrust Wins",
+    "pillars": [
+      {
+        "label": "Pillar One",
+        "headline": "Deterministic Software + Autonomous AI",
+        "description": "A hardened, rules-based platform handles the deterministic work — invoice delivery, payment processing, compliance checks — while autonomous AI workflows handle the judgment calls: matching, routing, scoring, and prioritization. Where confidence is lower, assisted workflows keep your team in control.",
+        "proofValue": "97%",
+        "proofLabel": "Straight-through processing<br>without human intervention"
+      },
+      {
+        "label": "Pillar Two",
+        "headline": "The Largest Proprietary B2B Payment Dataset",
+        "description": "Every transaction across our network feeds a proprietary dataset no competitor can license or replicate. This data trains every model — from invoice routing to payment prediction to collections scoring — and its accuracy compounds with every dollar processed.",
+        "proofValue": "$1T+",
+        "proofLabel": "In B2B payment data<br>training our AI models"
+      },
+      {
+        "label": "Pillar Three",
+        "headline": "The World's Most Connected B2B Payments Engine",
+        "description": "Billtrust connects 2,400+ suppliers to 100M+ buyers across every AP portal, payment rail, and procurement network. This isn't just reach — it's a network effect: every new connection makes the entire platform smarter, faster, and harder to compete with.",
+        "proofValue": "100M+",
+        "proofLabel": "Buyer connections across<br>every major payment rail"
+      }
+    ],
+    "connector": "Three layers of compounding advantage that no competitor can replicate."
+  },
+  "network": {
+    "eyebrow": "Business Payments Network",
+    "headline": "The Network Effect",
+    "description": "Every new connection makes every existing connection smarter. Billtrust's payment network is the largest in B2B — and it's accelerating.",
+    "overlayStats": [
+      {
+        "value": "2,400+",
+        "label": "Suppliers Connected"
+      },
+      {
+        "value": "100M+",
+        "label": "Buyer Connections"
+      },
+      {
+        "value": "$1T+",
+        "label": "Cash Processed"
+      },
+      {
+        "value": "99.9%",
+        "label": "Uptime SLA"
+      }
+    ],
+    "counters": [
+      {
+        "value": "2400",
+        "label": "B2B Suppliers"
+      },
+      {
+        "value": "100",
+        "label": "Million+ Buyers"
+      },
+      {
+        "value": "50",
+        "label": "AP Portals"
+      }
+    ]
+  },
+  "testimonials": {
+    "eyebrow": "What Finance Leaders Say",
+    "headline": "Trusted by the teams that <em>run</em> finance",
+    "featured": {
+      "quote": "Our DSO dropped 12 days in the first quarter — and it stayed down.",
+      "avatar": "SJ",
+      "name": "Sarah Johnson",
+      "role": "VP of Finance, Enterprise Manufacturing",
+      "metrics": [
+        {
+          "value": "12 days",
+          "label": "DSO reduction in first quarter"
+        },
+        {
+          "value": "97%",
+          "label": "Auto-match rate on cash application"
+        },
+        {
+          "value": "2 FTEs",
+          "label": "Freed up from manual reconciliation"
+        }
+      ]
+    },
+    "supporting": [
+      {
+        "quote": "We had 47 AP portal logins. Now we have one. My team went from managing connections to actually collecting cash. The rollout was straightforward — no six-month implementation nightmare.",
+        "result": "47→1",
+        "resultDetail": "portal connections consolidated",
+        "avatar": "MR",
+        "name": "Michael Rivera",
+        "role": "Controller, National Distribution"
+      },
+      {
+        "quote": "Same-day cash posting, every day — that's not a sales pitch, it's what actually happened. We close faster, our AR aging is always clean, and I trust the numbers when I walk into a board meeting.",
+        "result": "Same-day",
+        "resultDetail": "cash posting — down from 3 days",
+        "avatar": "AL",
+        "name": "Amanda Liu",
+        "role": "Director of AR Operations, Food Services"
+      }
+    ]
+  },
+  "cta": {
+    "eyebrow": "Ready for reliable cash flow?",
+    "headline": "Ready to unlock your cash?",
+    "description": "See how Billtrust turns receivables into certainty.",
+    "ctaPrimary": "Request a Demo",
+    "ctaSecondary": "Talk to Sales"
+  },
+  "footer": {
+    "tagline": "The cash generation platform. Intelligent software, proprietary data, and the world's largest B2B payments network.",
+    "copyright": "© 2026 Billtrust. All rights reserved.",
+    "columns": [
+      {
+        "title": "Platform",
+        "links": [
+          {
+            "label": "Cash Application",
+            "href": "#"
+          },
+          {
+            "label": "Collections",
+            "href": "#"
+          },
+          {
+            "label": "Invoicing",
+            "href": "#"
+          },
+          {
+            "label": "Payments",
+            "href": "#"
+          },
+          {
+            "label": "Credit",
+            "href": "#"
+          }
+        ]
+      },
+      {
+        "title": "Network",
+        "links": [
+          {
+            "label": "Business Payments",
+            "href": "#"
+          },
+          {
+            "label": "Buyer Portal",
+            "href": "#"
+          },
+          {
+            "label": "AP Integration",
+            "href": "#"
+          },
+          {
+            "label": "Partners",
+            "href": "#"
+          }
+        ]
+      },
+      {
+        "title": "Resources",
+        "links": [
+          {
+            "label": "Blog",
+            "href": "#"
+          },
+          {
+            "label": "Case Studies",
+            "href": "#"
+          },
+          {
+            "label": "Webinars",
+            "href": "#"
+          },
+          {
+            "label": "Documentation",
+            "href": "#"
+          }
+        ]
+      },
+      {
+        "title": "Company",
+        "links": [
+          {
+            "label": "About",
+            "href": "#"
+          },
+          {
+            "label": "Careers",
+            "href": "#"
+          },
+          {
+            "label": "Press",
+            "href": "#"
+          },
+          {
+            "label": "Contact",
+            "href": "#"
+          }
+        ]
+      }
+    ]
+  }
+}
