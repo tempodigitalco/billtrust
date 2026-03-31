@@ -1,0 +1,781 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Billtrust — The Cash Generation Platform</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,300;1,9..40,400&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;0,9..144,800;1,9..144,300;1,9..144,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0a0f1a;
+    --bg-card: #111827;
+    --bg-card-2: #141e2e;
+    --teal: #00c4b4;
+    --teal-dim: rgba(0,196,180,0.12);
+    --teal-border: rgba(0,196,180,0.2);
+    --gold: #f0c040;
+    --indigo: #6366f1;
+    --white: #f4f4f6;
+    --gray-300: #9ca3af;
+    --gray-500: #6b7280;
+    --gray-700: #374151;
+    --font-display: 'Fraunces', serif;
+    --font-body: 'DM Sans', sans-serif;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; background: var(--bg); color: var(--white); font-family: var(--font-body); overflow-x: hidden; -webkit-font-smoothing: antialiased; }
+
+  em { color: var(--teal); font-style: italic; }
+
+  /* ─── NAV ─── */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 1.25rem 3.5rem;
+    background: rgba(10,15,26,0.8);
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid rgba(255,255,255,0.04);
+  }
+  .logo { font-weight: 700; font-size: 1.25rem; display: flex; align-items: center; gap: 0.5rem; text-decoration: none; color: var(--white); }
+  .logo-mark { width: 30px; height: 30px; background: var(--teal); border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 0.9rem; font-weight: 800; color: var(--bg); }
+  .nav-links { display: flex; gap: 2rem; align-items: center; }
+  .nav-links a { color: var(--gray-300); text-decoration: none; font-size: 0.9rem; font-weight: 500; transition: color 0.2s; }
+  .nav-links a:hover { color: var(--white); }
+  .nav-cta { background: var(--teal) !important; color: var(--bg) !important; padding: 0.5rem 1.25rem !important; border-radius: 8px; font-weight: 600 !important; }
+
+  /* ─── HERO ─── */
+  .hero {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+    padding: 8rem 3.5rem 6rem;
+    max-width: 1280px;
+    margin: 0 auto;
+    position: relative;
+  }
+  .hero::before {
+    content: '';
+    position: fixed; top: -20%; left: 30%;
+    width: 900px; height: 900px;
+    background: radial-gradient(circle, rgba(0,196,180,0.07) 0%, transparent 70%);
+    pointer-events: none; z-index: -1;
+  }
+
+  .hero-badge {
+    display: inline-flex; align-items: center; gap: 0.5rem;
+    padding: 0.4rem 1rem;
+    background: var(--teal-dim);
+    border: 1px solid var(--teal-border);
+    border-radius: 100px;
+    font-size: 0.8rem; color: var(--teal); font-weight: 500;
+    margin-bottom: 1.75rem;
+  }
+  .badge-dot { width: 6px; height: 6px; background: var(--teal); border-radius: 50%; animation: pulse 2s infinite; }
+
+  .hero h1 {
+    font-family: var(--font-display);
+    font-size: clamp(3rem, 5.5vw, 5.5rem);
+    font-weight: 400; line-height: 1.05; letter-spacing: -0.03em;
+    margin-bottom: 1.5rem;
+  }
+  .hero h1 em { font-weight: 300; }
+
+  .hero-desc {
+    color: var(--gray-300); font-size: 1.05rem; line-height: 1.7;
+    max-width: 520px; margin-bottom: 2.25rem;
+  }
+  .hero-ctas { display: flex; gap: 1rem; flex-wrap: wrap; }
+
+  .btn-primary {
+    display: inline-flex; align-items: center; gap: 0.5rem;
+    padding: 0.85rem 1.75rem; background: var(--teal); color: var(--bg);
+    font-weight: 600; font-size: 0.95rem; font-family: var(--font-body);
+    border: none; border-radius: 10px; cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s; text-decoration: none;
+  }
+  .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 28px rgba(0,196,180,0.3); }
+  .btn-primary span { opacity: 0.8; }
+
+  .btn-secondary {
+    display: inline-flex; align-items: center; gap: 0.5rem;
+    padding: 0.85rem 1.75rem; background: transparent; color: var(--white);
+    font-weight: 500; font-size: 0.95rem; font-family: var(--font-body);
+    border: 1px solid var(--gray-700); border-radius: 10px; cursor: pointer;
+    transition: border-color 0.2s, background 0.2s; text-decoration: none;
+  }
+  .btn-secondary:hover { border-color: var(--gray-500); background: rgba(255,255,255,0.03); }
+
+  /* ─── HERO DASHBOARD ─── */
+  .hero-dashboard {
+    background: var(--bg-card);
+    border: 1px solid rgba(255,255,255,0.07);
+    border-radius: 20px; padding: 1.5rem;
+    box-shadow: 0 24px 60px rgba(0,0,0,0.5);
+    position: relative;
+  }
+  .dashboard-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.25rem; }
+  .dashboard-title { font-weight: 600; font-size: 0.9rem; }
+  .dashboard-date { font-size: 0.75rem; color: var(--gray-500); }
+  .dashboard-stats { display: grid; grid-template-columns: repeat(3,1fr); gap: 0.75rem; margin-bottom: 1.25rem; }
+  .dash-stat { background: var(--bg-card-2); border: 1px solid rgba(255,255,255,0.05); border-radius: 10px; padding: 0.875rem; }
+  .dash-stat-label { font-size: 0.68rem; color: var(--gray-500); margin-bottom: 0.35rem; }
+  .dash-stat-value { font-family: var(--font-display); font-size: 1.35rem; font-weight: 600; letter-spacing: -0.02em; line-height: 1; }
+  .dash-stat-change { font-size: 0.68rem; color: var(--teal); margin-top: 0.25rem; }
+  .dashboard-chart-label { font-size: 0.72rem; color: var(--gray-500); margin-bottom: 0.75rem; }
+  .dashboard-chart { height: 72px; display: flex; align-items: flex-end; gap: 5px; }
+  .chart-bar { flex: 1; background: rgba(0,196,180,0.12); border-radius: 4px 4px 0 0; }
+  .chart-bar.active { background: var(--teal); }
+  .floating-card {
+    position: absolute; bottom: -18px; right: -18px;
+    background: var(--teal); border-radius: 12px; padding: 0.75rem 1.1rem;
+    box-shadow: 0 12px 32px rgba(0,196,180,0.35);
+  }
+  .floating-label { font-size: 0.62rem; font-weight: 600; color: rgba(10,15,26,0.65); text-transform: uppercase; letter-spacing: 0.06em; }
+  .floating-value { font-family: var(--font-display); font-size: 1.25rem; font-weight: 700; color: var(--bg); letter-spacing: -0.02em; }
+
+  /* ─── STATS ─── */
+  .stats-section {
+    padding: 5rem 3.5rem;
+    background: var(--bg-card);
+    border-top: 1px solid rgba(255,255,255,0.04);
+    border-bottom: 1px solid rgba(255,255,255,0.04);
+  }
+  .stats-inner { max-width: 1200px; margin: 0 auto; }
+  .stats-header { margin-bottom: 3.5rem; }
+
+  .section-eyebrow {
+    font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.15em;
+    color: var(--teal); font-weight: 600; margin-bottom: 0.75rem;
+  }
+  .section-eyebrow.gold { color: var(--gold); }
+  .section-eyebrow.muted { color: var(--gray-500); }
+
+  .section-title {
+    font-family: var(--font-display);
+    font-size: clamp(1.75rem, 3vw, 2.8rem);
+    font-weight: 400; line-height: 1.15; letter-spacing: -0.025em;
+    max-width: 640px;
+  }
+
+  .stats-grid { display: grid; grid-template-columns: repeat(4,1fr); }
+  .stat-item { padding: 2rem 2.5rem; border-right: 1px solid rgba(255,255,255,0.05); }
+  .stat-item:last-child { border-right: none; }
+  .stat-number {
+    font-family: var(--font-display);
+    font-size: clamp(2.5rem, 4vw, 4rem); font-weight: 600;
+    letter-spacing: -0.03em; line-height: 1; margin-bottom: 0.75rem;
+  }
+  .stat-number span { color: var(--teal); font-size: 0.55em; vertical-align: super; }
+  .stat-desc { font-size: 0.83rem; color: var(--gray-500); line-height: 1.55; max-width: 175px; }
+
+  /* ─── PLATFORM ─── */
+  .platform-section { padding: 7rem 3.5rem; max-width: 1200px; margin: 0 auto; }
+  .platform-header { margin-bottom: 4rem; }
+  .platform-pillars { display: flex; flex-direction: column; gap: 2rem; }
+
+  .pillar-card {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 4rem;
+    background: var(--bg-card); border: 1px solid rgba(255,255,255,0.05);
+    border-radius: 20px; padding: 3rem; align-items: center;
+    transition: border-color 0.3s;
+  }
+  .pillar-card:hover { border-color: rgba(0,196,180,0.15); }
+
+  .pillar-eyebrow { font-size: 0.68rem; text-transform: uppercase; letter-spacing: 0.12em; color: var(--teal); font-weight: 600; margin-bottom: 0.875rem; }
+  .pillar-card:nth-child(2) .pillar-eyebrow { color: var(--gold); }
+  .pillar-card:nth-child(3) .pillar-eyebrow { color: var(--indigo); }
+
+  .pillar-title {
+    font-family: var(--font-display);
+    font-size: clamp(1.35rem, 2vw, 1.85rem); font-weight: 400;
+    line-height: 1.2; letter-spacing: -0.02em; margin-bottom: 1rem;
+  }
+  .pillar-desc { color: var(--gray-300); font-size: 0.88rem; line-height: 1.72; margin-bottom: 1.5rem; }
+
+  .pillar-features { list-style: none; display: flex; flex-direction: column; gap: 0.6rem; }
+  .pillar-features li { display: flex; gap: 0.75rem; align-items: flex-start; font-size: 0.83rem; color: var(--gray-300); }
+  .pillar-features li::before { content: '✓'; color: var(--teal); font-size: 0.75rem; flex-shrink: 0; margin-top: 0.1em; }
+  .pillar-card:nth-child(2) .pillar-features li::before { color: var(--gold); }
+  .pillar-card:nth-child(3) .pillar-features li::before { color: var(--indigo); }
+
+  .pillar-data-card { background: var(--bg-card-2); border: 1px solid rgba(255,255,255,0.06); border-radius: 14px; overflow: hidden; }
+  .pdc-header { display: flex; justify-content: space-between; align-items: center; padding: 1rem 1.25rem; border-bottom: 1px solid rgba(255,255,255,0.05); }
+  .pdc-title { font-size: 0.83rem; font-weight: 600; }
+  .pdc-pill { font-size: 0.63rem; font-weight: 600; padding: 0.25rem 0.65rem; border-radius: 100px; background: rgba(0,196,180,0.1); color: var(--teal); border: 1px solid rgba(0,196,180,0.2); }
+  .pillar-card:nth-child(2) .pdc-pill { background: rgba(240,192,64,0.1); color: var(--gold); border-color: rgba(240,192,64,0.2); }
+  .pillar-card:nth-child(3) .pdc-pill { background: rgba(99,102,241,0.1); color: var(--indigo); border-color: rgba(99,102,241,0.2); }
+  .pdc-rows { padding: 0.25rem 0; }
+  .pdc-row { display: flex; justify-content: space-between; align-items: center; padding: 0.65rem 1.25rem; border-bottom: 1px solid rgba(255,255,255,0.03); }
+  .pdc-row:last-child { border-bottom: none; }
+  .pdc-row-label { font-size: 0.78rem; color: var(--gray-500); }
+  .pdc-row-value { font-size: 0.83rem; font-weight: 600; }
+
+  /* ─── MOAT ─── */
+  .moat-section {
+    padding: 7rem 3.5rem;
+    background: var(--bg-card);
+    border-top: 1px solid rgba(255,255,255,0.04);
+  }
+  .moat-inner { max-width: 1200px; margin: 0 auto; }
+  .moat-header { margin-bottom: 4rem; }
+  .moat-pillars { display: grid; grid-template-columns: repeat(3,1fr); gap: 1.5rem; margin-bottom: 2.5rem; }
+  .moat-pillar { padding: 2rem; border: 1px solid rgba(255,255,255,0.05); border-radius: 16px; }
+  .moat-pillar-label { font-size: 0.63rem; text-transform: uppercase; letter-spacing: 0.15em; color: var(--gray-500); margin-bottom: 0.75rem; }
+  .moat-pillar-title { font-family: var(--font-display); font-size: 1.15rem; font-weight: 500; line-height: 1.3; margin-bottom: 0.875rem; letter-spacing: -0.01em; }
+  .moat-pillar-desc { font-size: 0.82rem; color: var(--gray-300); line-height: 1.65; margin-bottom: 1.5rem; }
+  .proof-value { font-family: var(--font-display); font-size: 2.6rem; font-weight: 700; color: var(--teal); letter-spacing: -0.03em; line-height: 1; }
+  .proof-label { font-size: 0.73rem; color: var(--gray-500); margin-top: 0.3rem; line-height: 1.45; }
+  .moat-connector {
+    background: rgba(0,196,180,0.04); border: 1px solid rgba(0,196,180,0.12);
+    border-radius: 12px; padding: 1.5rem 2rem;
+    font-size: 0.9rem; color: var(--gray-300); line-height: 1.7; font-style: italic;
+  }
+
+  /* ─── NETWORK ─── */
+  .network-section { padding: 7rem 3.5rem; max-width: 1200px; margin: 0 auto; }
+  .network-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center; }
+  .network-title { font-family: var(--font-display); font-size: clamp(1.8rem, 3vw, 2.8rem); font-weight: 400; line-height: 1.15; letter-spacing: -0.025em; margin-bottom: 1.25rem; }
+  .network-desc { color: var(--gray-300); font-size: 0.95rem; line-height: 1.7; margin-bottom: 2rem; }
+  .network-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+  .network-stat { background: var(--bg-card); border: 1px solid rgba(255,255,255,0.05); border-radius: 12px; padding: 1.25rem; }
+  .network-stat-value { font-family: var(--font-display); font-size: 1.75rem; font-weight: 600; letter-spacing: -0.02em; color: var(--teal); }
+  .network-stat-label { font-size: 0.73rem; color: var(--gray-500); margin-top: 0.2rem; }
+
+  .network-visual {
+    background: var(--bg-card); border: 1px solid rgba(255,255,255,0.05);
+    border-radius: 20px; padding: 2.5rem;
+    min-height: 320px; display: flex; flex-direction: column; justify-content: space-between;
+  }
+  .network-visual-label { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.12em; color: var(--gray-500); margin-bottom: 2rem; }
+  .counters { display: flex; flex-direction: column; gap: 1.75rem; }
+  .counter-item { display: flex; align-items: center; gap: 1rem; }
+  .counter-label { font-size: 0.78rem; color: var(--gray-300); min-width: 110px; }
+  .counter-bar-wrap { flex: 1; background: rgba(255,255,255,0.04); border-radius: 100px; height: 6px; overflow: hidden; }
+  .counter-bar { height: 100%; background: linear-gradient(90deg, var(--teal), rgba(0,196,180,0.5)); border-radius: 100px; }
+  .counter-value { font-family: var(--font-display); font-size: 1.1rem; font-weight: 600; min-width: 50px; text-align: right; letter-spacing: -0.01em; }
+
+  /* ─── TESTIMONIALS ─── */
+  .testimonials-section {
+    padding: 7rem 3.5rem;
+    background: var(--bg-card);
+    border-top: 1px solid rgba(255,255,255,0.04);
+  }
+  .testimonials-inner { max-width: 1200px; margin: 0 auto; }
+  .testimonials-header { margin-bottom: 3.5rem; }
+  .testimonials-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: start; }
+
+  .featured-testimonial {
+    background: var(--bg); border: 1px solid rgba(255,255,255,0.06);
+    border-radius: 20px; padding: 2.5rem;
+  }
+  .testimonial-quote {
+    font-family: var(--font-display); font-size: 1.1rem; font-weight: 400;
+    line-height: 1.6; color: var(--white); margin-bottom: 1.75rem; font-style: italic;
+  }
+  .testimonial-meta { display: flex; align-items: center; gap: 0.875rem; margin-bottom: 1.5rem; }
+  .testimonial-avatar {
+    width: 40px; height: 40px; border-radius: 50%;
+    background: var(--teal-dim); border: 1px solid var(--teal-border);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 0.78rem; font-weight: 700; color: var(--teal);
+  }
+  .testimonial-name { font-size: 0.9rem; font-weight: 600; }
+  .testimonial-role { font-size: 0.73rem; color: var(--gray-500); }
+  .testimonial-metrics { display: flex; gap: 1.5rem; padding-top: 1.5rem; border-top: 1px solid rgba(255,255,255,0.05); flex-wrap: wrap; }
+  .metric-value { font-family: var(--font-display); font-size: 1.3rem; font-weight: 600; letter-spacing: -0.02em; color: var(--teal); }
+  .metric-label { font-size: 0.7rem; color: var(--gray-500); margin-top: 0.1rem; line-height: 1.35; max-width: 100px; }
+
+  .supporting-testimonials { display: flex; flex-direction: column; gap: 1.5rem; }
+  .support-card { background: var(--bg); border: 1px solid rgba(255,255,255,0.05); border-radius: 14px; padding: 1.75rem; }
+  .support-quote { font-size: 0.83rem; color: var(--gray-300); line-height: 1.68; margin-bottom: 1.25rem; }
+  .support-result { font-family: var(--font-display); font-size: 1.75rem; font-weight: 600; color: var(--white); letter-spacing: -0.02em; }
+  .support-result-detail { font-size: 0.73rem; color: var(--gray-500); }
+  .support-meta { display: flex; align-items: center; gap: 0.75rem; margin-top: 1.25rem; padding-top: 1.25rem; border-top: 1px solid rgba(255,255,255,0.04); }
+  .support-avatar { width: 32px; height: 32px; border-radius: 50%; background: rgba(240,192,64,0.08); border: 1px solid rgba(240,192,64,0.2); display: flex; align-items: center; justify-content: center; font-size: 0.68rem; font-weight: 700; color: var(--gold); }
+  .support-name { font-size: 0.8rem; font-weight: 600; }
+  .support-role { font-size: 0.7rem; color: var(--gray-500); }
+
+  /* ─── CTA ─── */
+  .cta-section { padding: 8rem 3.5rem; text-align: center; position: relative; overflow: hidden; }
+  .cta-section::before {
+    content: '';
+    position: absolute; bottom: -10%; left: 50%; transform: translateX(-50%);
+    width: 900px; height: 600px;
+    background: radial-gradient(circle, rgba(0,196,180,0.07) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .cta-eyebrow { margin-bottom: 1rem; }
+  .cta-title {
+    font-family: var(--font-display);
+    font-size: clamp(2.5rem, 5vw, 5rem); font-weight: 400;
+    line-height: 1.1; letter-spacing: -0.03em;
+    max-width: 700px; margin: 0 auto 1.25rem;
+  }
+  .cta-desc { color: var(--gray-300); font-size: 1.05rem; max-width: 520px; margin: 0 auto 2.5rem; line-height: 1.65; }
+  .cta-buttons { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+
+  /* ─── FOOTER ─── */
+  footer { padding: 4rem 3.5rem 3rem; border-top: 1px solid rgba(255,255,255,0.04); }
+  .footer-inner { max-width: 1200px; margin: 0 auto; }
+  .footer-top { display: grid; grid-template-columns: 1.5fr repeat(4,1fr); gap: 3rem; margin-bottom: 3rem; }
+  .footer-tagline { font-size: 0.83rem; color: var(--gray-500); line-height: 1.65; max-width: 230px; margin-top: 0.75rem; }
+  .footer-col h4 { font-size: 0.72rem; font-weight: 600; color: var(--white); text-transform: uppercase; letter-spacing: 0.12em; margin-bottom: 1.25rem; }
+  .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 0.7rem; }
+  .footer-col li a { font-size: 0.83rem; color: var(--gray-500); text-decoration: none; transition: color 0.2s; }
+  .footer-col li a:hover { color: var(--gray-300); }
+  .footer-bottom { display: flex; justify-content: space-between; align-items: center; padding-top: 2rem; border-top: 1px solid rgba(255,255,255,0.04); font-size: 0.78rem; color: var(--gray-500); }
+
+  /* ─── ANIMATIONS ─── */
+  @keyframes pulse {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.5; transform: scale(1.5); }
+  }
+  .reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.7s cubic-bezier(0.23,1,0.32,1), transform 0.7s cubic-bezier(0.23,1,0.32,1); }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+  .reveal-delay-1 { transition-delay: 0.12s; }
+  .reveal-delay-2 { transition-delay: 0.24s; }
+  .reveal-delay-3 { transition-delay: 0.36s; }
+
+  /* ─── RESPONSIVE ─── */
+  @media (max-width: 1024px) {
+    .hero { grid-template-columns: 1fr; }
+    .hero-right { display: none; }
+    .stats-grid { grid-template-columns: repeat(2,1fr); }
+    .stat-item:nth-child(2) { border-right: none; }
+    .stat-item:nth-child(3) { border-top: 1px solid rgba(255,255,255,0.05); }
+    .stat-item:nth-child(4) { border-right: none; border-top: 1px solid rgba(255,255,255,0.05); }
+    .pillar-card { grid-template-columns: 1fr; }
+    .moat-pillars { grid-template-columns: 1fr; }
+    .network-inner { grid-template-columns: 1fr; }
+    .testimonials-grid { grid-template-columns: 1fr; }
+    .footer-top { grid-template-columns: 1fr 1fr; }
+    nav { padding: 1rem 1.5rem; }
+    .nav-links a:not(.nav-cta) { display: none; }
+  }
+  @media (max-width: 640px) {
+    .hero, .stats-section, .platform-section, .moat-section, .network-section, .testimonials-section, .cta-section, footer { padding-left: 1.5rem; padding-right: 1.5rem; }
+    .stats-grid { grid-template-columns: 1fr 1fr; }
+    .footer-top { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="logo">
+    <div class="logo-mark">B</div>
+    billtrust
+  </a>
+  <div class="nav-links">
+    <a href="#">Platform</a>
+    <a href="#">Solutions</a>
+    <a href="#">Resources</a>
+    <a href="#" class="nav-cta">Get a Demo</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-left">
+    <div class="hero-badge reveal">
+      <span class="badge-dot"></span>
+      Trusted by 2,400+ enterprise finance teams
+    </div>
+    <h1 class="hero-title reveal reveal-delay-1">The Cash Generation <em>Platform</em></h1>
+    <p class="hero-desc reveal reveal-delay-2">
+      Billtrust fuses autonomous AI, $1T+ in proprietary B2B payment data, and the world's largest payments network into one platform — so your AR team collects cash faster, closes the books with confidence, and never chases a payment again.
+    </p>
+    <div class="hero-ctas reveal reveal-delay-3">
+      <a href="#" class="btn-primary">See It In Action <span>→</span></a>
+      <a href="#" class="btn-secondary">Talk to an Expert</a>
+    </div>
+  </div>
+
+  <div class="hero-right reveal reveal-delay-2">
+    <div class="hero-dashboard">
+      <div class="dashboard-header">
+        <span class="dashboard-title">Cash Dashboard</span>
+        <span class="dashboard-date">Tuesday, March 10</span>
+      </div>
+      <div class="dashboard-stats">
+        <div class="dash-stat">
+          <div class="dash-stat-label">Cash Applied Today</div>
+          <div class="dash-stat-value">$2.4M</div>
+          <div class="dash-stat-change">↑ 18% vs. last week</div>
+        </div>
+        <div class="dash-stat">
+          <div class="dash-stat-label">Auto-Match Rate</div>
+          <div class="dash-stat-value">97.3%</div>
+          <div class="dash-stat-change">↑ 2.1% this month</div>
+        </div>
+        <div class="dash-stat">
+          <div class="dash-stat-label">Open Invoices</div>
+          <div class="dash-stat-value">1,247</div>
+          <div class="dash-stat-change">↓ 312 from yesterday</div>
+        </div>
+      </div>
+      <div class="dashboard-chart-label">Weekly Cash Flow</div>
+      <div class="dashboard-chart">
+        <div class="chart-bar" style="height:38%"></div>
+        <div class="chart-bar" style="height:55%"></div>
+        <div class="chart-bar" style="height:44%"></div>
+        <div class="chart-bar" style="height:72%"></div>
+        <div class="chart-bar" style="height:52%"></div>
+        <div class="chart-bar active" style="height:88%"></div>
+        <div class="chart-bar" style="height:68%"></div>
+      </div>
+      <div class="floating-card">
+        <span class="floating-label">Just matched</span>
+        <span class="floating-value">$48,750.00</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<section class="stats-section reveal">
+  <div class="stats-inner">
+    <div class="stats-header">
+      <div class="section-eyebrow">Proven at Scale</div>
+      <h2 class="section-title">The numbers your CFO <em>actually&nbsp;cares&nbsp;about</em></h2>
+    </div>
+    <div class="stats-grid">
+      <div class="stat-item">
+        <div class="stat-number">$1T<span>+</span></div>
+        <p class="stat-desc">In B2B payment data powering smarter, faster cash decisions</p>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number">2,400<span>+</span></div>
+        <p class="stat-desc">Enterprise finance teams who depend on Billtrust daily</p>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number">100M<span>+</span></div>
+        <p class="stat-desc">Buyer connections — one integration, every payment rail</p>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number">12<span>day</span></div>
+        <p class="stat-desc">Average DSO reduction in the first quarter after go-live</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PLATFORM -->
+<section class="platform-section">
+  <div class="platform-header reveal">
+    <div class="section-eyebrow">The Platform</div>
+    <h2 class="section-title">Reliable AR from invoice to <em>cash&nbsp;in&nbsp;hand</em></h2>
+  </div>
+
+  <div class="platform-pillars">
+
+    <!-- Pillar 1 -->
+    <div class="pillar-card reveal">
+      <div>
+        <div class="pillar-eyebrow">Autonomous Delivery Engine</div>
+        <h3 class="pillar-title">AI that routes every invoice to the <em>fastest&nbsp;path&nbsp;to&nbsp;cash</em></h3>
+        <p class="pillar-desc">Billtrust's autonomous delivery engine analyzes each buyer's payment behavior — preferred channel, historical speed-to-pay, dispute patterns — then routes invoices through the optimal path: AP portal, email, EDI, or the Billtrust Network. No rules to configure. No manual guesswork. The system learns and adapts with every transaction.</p>
+        <ul class="pillar-features">
+          <li>Autonomous channel selection trained on $1T+ in payment data</li>
+          <li>99.7% delivery rate — verified across every rail</li>
+          <li>Continuous optimization: fewer disputes, faster time-to-pay</li>
+        </ul>
+      </div>
+      <div class="pillar-data-card">
+        <div class="pdc-header">
+          <span class="pdc-title">Invoice Delivery</span>
+          <span class="pdc-pill">Sent</span>
+        </div>
+        <div class="pdc-rows">
+          <div class="pdc-row"><span class="pdc-row-label">Invoices this week</span><span class="pdc-row-value">4,218</span></div>
+          <div class="pdc-row"><span class="pdc-row-label">Delivery rate</span><span class="pdc-row-value">99.7%</span></div>
+          <div class="pdc-row"><span class="pdc-row-label">Digital adoption</span><span class="pdc-row-value">78% ↑</span></div>
+          <div class="pdc-row"><span class="pdc-row-label">Avg. time to pay</span><span class="pdc-row-value">-8 days</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Pillar 2 -->
+    <div class="pillar-card reveal">
+      <div>
+        <div class="pillar-eyebrow">Autonomous Cash Matching</div>
+        <h3 class="pillar-title">AI-powered matching that <em>closes&nbsp;your&nbsp;books</em></h3>
+        <p class="pillar-desc">Billtrust's autonomous matching engine ingests every payment format — checks, ACH, wire, lockbox, virtual cards — and resolves them against open invoices in under a second. Trained on billions of historical transactions, the model handles remittance variations, partial payments, and multi-invoice remits that break rules-based systems. Exceptions drop to an assisted workflow where your team resolves only what the AI can't.</p>
+        <ul class="pillar-features">
+          <li>97% straight-through processing — autonomous, not rules-based</li>
+          <li>Assisted exception handling for edge cases your team controls</li>
+          <li>Same-day posting, audit-ready AR aging</li>
+        </ul>
+      </div>
+      <div class="pillar-data-card">
+        <div class="pdc-header">
+          <span class="pdc-title">Cash Application</span>
+          <span class="pdc-pill">AI Matched</span>
+        </div>
+        <div class="pdc-rows">
+          <div class="pdc-row"><span class="pdc-row-label">Payment #4817</span><span class="pdc-row-value">$24,500.00</span></div>
+          <div class="pdc-row"><span class="pdc-row-label">Invoice match</span><span class="pdc-row-value">INV-2847 → 97%</span></div>
+          <div class="pdc-row"><span class="pdc-row-label">Processing time</span><span class="pdc-row-value">0.3 seconds</span></div>
+          <div class="pdc-row"><span class="pdc-row-label">Status</span><span class="pdc-row-value">● Auto-applied</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Pillar 3 -->
+    <div class="pillar-card reveal">
+      <div>
+        <div class="pillar-eyebrow">Predictive Collections Intelligence</div>
+        <h3 class="pillar-title">Machine learning that knows who'll pay — and <em>when</em></h3>
+        <p class="pillar-desc">Billtrust's predictive models score every receivable by likelihood and timing of payment, trained on cross-network behavioral data no single company could build alone. The system autonomously triggers dunning sequences for routine accounts while surfacing high-risk receivables to an assisted worklist — so your collectors focus only where human judgment moves the needle.</p>
+        <ul class="pillar-features">
+          <li>Predictive scoring powered by cross-network payment signals</li>
+          <li>Autonomous dunning for routine collections</li>
+          <li>Assisted worklists that surface what needs human attention</li>
+        </ul>
+      </div>
+      <div class="pillar-data-card">
+        <div class="pdc-header">
+          <span class="pdc-title">Collections Queue</span>
+          <span class="pdc-pill">Prioritized</span>
+        </div>
+        <div class="pdc-rows">
+          <div class="pdc-row"><span class="pdc-row-label">High priority</span><span class="pdc-row-value">12 accounts</span></div>
+          <div class="pdc-row"><span class="pdc-row-label">Total outstanding</span><span class="pdc-row-value">$3.2M</span></div>
+          <div class="pdc-row"><span class="pdc-row-label">Predicted recovery</span><span class="pdc-row-value">$2.8M (87%)</span></div>
+          <div class="pdc-row"><span class="pdc-row-label">Next action</span><span class="pdc-row-value">Auto-dunning in 2h</span></div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- MOAT -->
+<section class="moat-section">
+  <div class="moat-inner">
+    <div class="moat-header reveal">
+      <div class="section-eyebrow">Why Billtrust</div>
+      <h2 class="section-title">A technical moat no competitor <em>can&nbsp;replicate</em></h2>
+    </div>
+    <div class="moat-pillars">
+      <div class="moat-pillar reveal">
+        <div class="moat-pillar-label">Pillar One</div>
+        <h3 class="moat-pillar-title">Deterministic Software + Autonomous AI</h3>
+        <p class="moat-pillar-desc">A hardened, rules-based platform handles the deterministic work — invoice delivery, payment processing, compliance checks — while autonomous AI workflows handle the judgment calls: matching, routing, scoring, and prioritization. Where confidence is lower, assisted workflows keep your team in control.</p>
+        <div class="proof-value">97%</div>
+        <div class="proof-label">Straight-through processing<br>without human intervention</div>
+      </div>
+      <div class="moat-pillar reveal reveal-delay-1">
+        <div class="moat-pillar-label">Pillar Two</div>
+        <h3 class="moat-pillar-title">The Largest Proprietary B2B Payment Dataset</h3>
+        <p class="moat-pillar-desc">Every transaction across our network feeds a proprietary dataset no competitor can license or replicate. This data trains every model — from invoice routing to payment prediction to collections scoring — and its accuracy compounds with every dollar processed.</p>
+        <div class="proof-value">$1T+</div>
+        <div class="proof-label">In B2B payment data<br>training our AI models</div>
+      </div>
+      <div class="moat-pillar reveal reveal-delay-2">
+        <div class="moat-pillar-label">Pillar Three</div>
+        <h3 class="moat-pillar-title">The World's Most Connected B2B Payments Engine</h3>
+        <p class="moat-pillar-desc">Billtrust connects 2,400+ suppliers to 100M+ buyers across every AP portal, payment rail, and procurement network. This isn't just reach — it's a network effect: every new connection makes the entire platform smarter, faster, and harder to compete with.</p>
+        <div class="proof-value">100M+</div>
+        <div class="proof-label">Buyer connections across<br>every major payment rail</div>
+      </div>
+    </div>
+    <div class="moat-connector reveal">
+      Together, these three layers create a compounding advantage. The more data flows through the network, the smarter the AI becomes. The smarter the AI, the more customers join. And the more customers join, the more valuable the network — for everyone on it.
+    </div>
+  </div>
+</section>
+
+<!-- NETWORK -->
+<section class="network-section">
+  <div class="network-inner">
+    <div class="network-text reveal">
+      <div class="section-eyebrow">Business Payments Network</div>
+      <h2 class="network-title">The largest <em>B2B&nbsp;payments&nbsp;network</em></h2>
+      <p class="network-desc">One integration replaces dozens of portal logins. Connect to 100M+ buyers across every AP portal and payment rail — payments route automatically for maximum speed and minimum cost, so your team can stop managing connections and start collecting cash.</p>
+      <div class="network-stats">
+        <div class="network-stat">
+          <div class="network-stat-value">2,400+</div>
+          <div class="network-stat-label">Suppliers Connected</div>
+        </div>
+        <div class="network-stat">
+          <div class="network-stat-value">100M+</div>
+          <div class="network-stat-label">Buyer Connections</div>
+        </div>
+        <div class="network-stat">
+          <div class="network-stat-value">$1T+</div>
+          <div class="network-stat-label">Cash Processed</div>
+        </div>
+        <div class="network-stat">
+          <div class="network-stat-value">99.9%</div>
+          <div class="network-stat-label">Uptime SLA</div>
+        </div>
+      </div>
+    </div>
+    <div class="network-visual reveal reveal-delay-1">
+      <div class="network-visual-label">Network Scale</div>
+      <div class="counters">
+        <div class="counter-item">
+          <span class="counter-label">B2B Suppliers</span>
+          <div class="counter-bar-wrap"><div class="counter-bar" style="width:82%"></div></div>
+          <span class="counter-value">2400</span>
+        </div>
+        <div class="counter-item">
+          <span class="counter-label">Million+ Buyers</span>
+          <div class="counter-bar-wrap"><div class="counter-bar" style="width:100%"></div></div>
+          <span class="counter-value">100</span>
+        </div>
+        <div class="counter-item">
+          <span class="counter-label">AP Portals</span>
+          <div class="counter-bar-wrap"><div class="counter-bar" style="width:38%"></div></div>
+          <span class="counter-value">50</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="testimonials-section">
+  <div class="testimonials-inner">
+    <div class="testimonials-header reveal">
+      <div class="section-eyebrow">What Finance Leaders Say</div>
+      <h2 class="section-title">Trusted by the teams that <em>run</em> finance</h2>
+    </div>
+    <div class="testimonials-grid">
+      <div class="featured-testimonial reveal">
+        <p class="testimonial-quote">"Our DSO dropped 12 days in the first quarter — and it stayed down. My CFO stopped asking me about cash flow forecasts because the numbers just come in reliably now. That's the peace of mind I was looking for."</p>
+        <div class="testimonial-meta">
+          <div class="testimonial-avatar">SJ</div>
+          <div>
+            <div class="testimonial-name">Sarah Johnson</div>
+            <div class="testimonial-role">VP of Finance, Enterprise Manufacturing</div>
+          </div>
+        </div>
+        <div class="testimonial-metrics">
+          <div>
+            <div class="metric-value">12 days</div>
+            <div class="metric-label">DSO reduction in first quarter</div>
+          </div>
+          <div>
+            <div class="metric-value">97%</div>
+            <div class="metric-label">Auto-match rate on cash application</div>
+          </div>
+          <div>
+            <div class="metric-value">2 FTEs</div>
+            <div class="metric-label">Freed up from manual reconciliation</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="supporting-testimonials">
+        <div class="support-card reveal reveal-delay-1">
+          <p class="support-quote">"We had 47 AP portal logins. Now we have one. My team went from managing connections to actually collecting cash. The rollout was straightforward — no six-month implementation nightmare."</p>
+          <div class="support-result">47→1</div>
+          <div class="support-result-detail">portal connections consolidated</div>
+          <div class="support-meta">
+            <div class="support-avatar">MR</div>
+            <div>
+              <div class="support-name">Michael Rivera</div>
+              <div class="support-role">Controller, National Distribution</div>
+            </div>
+          </div>
+        </div>
+        <div class="support-card reveal reveal-delay-2">
+          <p class="support-quote">"Same-day cash posting, every day — that's not a sales pitch, it's what actually happened. We close faster, our AR aging is always clean, and I trust the numbers when I walk into a board meeting."</p>
+          <div class="support-result">Same-day</div>
+          <div class="support-result-detail">cash posting — down from 3 days</div>
+          <div class="support-meta">
+            <div class="support-avatar">AL</div>
+            <div>
+              <div class="support-name">Amanda Liu</div>
+              <div class="support-role">Director of AR Operations, Food Services</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <div class="cta-eyebrow section-eyebrow reveal">Ready for reliable cash flow?</div>
+  <h2 class="cta-title reveal reveal-delay-1">Your CFO will <em>thank&nbsp;you</em></h2>
+  <p class="cta-desc reveal reveal-delay-2">See how 2,400+ finance teams use Billtrust to collect cash faster, close the books with confidence, and stop worrying about what falls through the cracks.</p>
+  <div class="cta-buttons reveal reveal-delay-3">
+    <a href="#" class="btn-primary">Schedule a Demo <span>→</span></a>
+    <a href="#" class="btn-secondary">Talk to Sales</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div>
+        <a href="#" class="logo" style="font-size:1.1rem;">
+          <div class="logo-mark" style="width:26px;height:26px;font-size:0.8rem;border-radius:6px;">B</div>
+          billtrust
+        </a>
+        <p class="footer-tagline">The cash generation platform. Intelligent software, proprietary data, and the world's largest B2B payments network.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Platform</h4>
+        <ul>
+          <li><a href="#">Cash Application</a></li>
+          <li><a href="#">Collections</a></li>
+          <li><a href="#">Invoicing</a></li>
+          <li><a href="#">Payments</a></li>
+          <li><a href="#">Credit</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Network</h4>
+        <ul>
+          <li><a href="#">Business Payments</a></li>
+          <li><a href="#">Buyer Portal</a></li>
+          <li><a href="#">AP Integration</a></li>
+          <li><a href="#">Partners</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Resources</h4>
+        <ul>
+          <li><a href="#">Blog</a></li>
+          <li><a href="#">Case Studies</a></li>
+          <li><a href="#">Webinars</a></li>
+          <li><a href="#">Documentation</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Careers</a></li>
+          <li><a href="#">Press</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Billtrust. All rights reserved.</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) entry.target.classList.add('visible');
+  });
+}, { threshold: 0.1 });
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>
